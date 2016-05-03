@@ -12,7 +12,7 @@ config :logger, level: :warn
 # Configure your database
 config :peepchat, Peepchat.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "guillaumeg",
+  username: "postgres",
   database: "peepchat_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
