@@ -6,7 +6,7 @@ defmodule Peepchat.UserController do
 
   def current(conn, _) do
     user = conn
-    |> Guardian.Plug.current_ressource
+    |> Guardian.Plug.current_resource
 
     conn
     |> render(Peepchat.UserView, "show.json", user: user)

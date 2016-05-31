@@ -4,7 +4,7 @@ defmodule Peepchat.Router do
   pipeline :api do
     plug :accepts, ["json", "json-api"]
 
-    plug Guardian.Plug.VerifyHeader
+    plug Guardian.Plug.VerifyHeader, realm: "Bearer"
     plug Guardian.Plug.LoadResource
   end
 
@@ -12,6 +12,6 @@ defmodule Peepchat.Router do
     pipe_through :api
     post "register", RegistrationController, :create
     post "token", SessionController, :create, as: :login
-    get "/user/current", UserController, :curent
+    get "/user/current", UserController, :current
   end
 end
